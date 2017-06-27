@@ -1,36 +1,35 @@
 <template>
-  <div class="template">
-    <ul>
-        <li v-for="tweet in tweets">
-          <tweet :tweet="tweet"/>
-        </li>
-    </ul>
+  <div class="timeline">
+    <feed :tweets="tweets" :loading="loading"/></li>
   </div>
 </template>
 
 <script>
-import Tweet from './Tweet.vue'
 import Vue from 'vue'
 import Resource from 'vue-resource'
 Vue.use(Resource)
+import Feed from './Feed.vue'
 export default {
-  components: {Tweet},
+  name: 'timeline',
+  components: {Feed},
+  methods: {
+    fetchTweets: function () {
+      this.$http.get('http://localhost:8080/list').then(response => {
+        this.tweets = response.body
+        this.loading = false
+      }, response => {
+        console.log('error')
+      })
+    }
+  },
   data () {
     return {
-      tweets: []
+      tweets: [],
+      loading: true
     }
   },
   created () {
     this.fetchTweets()
-  },
-  methods: {
-    fetchTweets () {
-      this.$http.get('http://localhost:8080/list').then(response => {
-        this.tweets = response.body
-      }, response => {
-      // error callback
-      })
-    }
   }
 }
 </script>
