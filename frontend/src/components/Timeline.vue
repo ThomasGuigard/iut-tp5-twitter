@@ -10,15 +10,26 @@
 
 <script>
 import Tweet from './Tweet.vue'
+import Vue from 'vue'
+import Resource from 'vue-resource'
+Vue.use(Resource)
 export default {
   components: {Tweet},
   data () {
     return {
-      tweets: [
-        { name: 'Vald', contenu: 'J\'en roule un comme Jean Moulin' },
-        { name: 'MacroDu69', contenu: 'Rabais à Perrache frère' },
-        { name: 'BicraveurABob', contenu: 'Qui a du caprisun dans le coin ? Je file un bleu' }
-      ]
+      tweets: []
+    }
+  },
+  created () {
+    this.fetchTweets()
+  },
+  methods: {
+    fetchTweets () {
+      this.$http.get('http://localhost:8080/list').then(response => {
+        this.tweets = response.body
+      }, response => {
+      // error callback
+      })
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="tweet">
-    {{ tweet.name }} {{ tweet.contenu}}
+    {{ tweet.name }} {{ tweet.contenu}} {{ tweet.date }}
   </div>
 </template>
 
