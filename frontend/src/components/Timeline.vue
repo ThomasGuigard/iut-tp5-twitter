@@ -1,18 +1,23 @@
 <template>
   <div class="template">
     <ul>
-        <li v-for="tweet in tweets">{{ tweet.name }} {{ tweet.contenu}}</li>
+        <li v-for="tweet in tweets">
+          <tweet :tweet="tweet"/>
+        </li>
     </ul>
   </div>
 </template>
 
 <script>
+import Tweet from './Tweet.vue'
 export default {
+  components: {Tweet},
   data () {
     return {
-      tweets: [ { name: 'tweet1', contenu: 'Zbat money' },
-       { name: 'tweet2', contenu: 'J\'en roule un comme Jean-Moulin' },
-       { name: 'tweet3', contenu: 'Brulons les tous jusq\'ua la moelle !' }
+      tweets: [
+        { name: 'Vald', contenu: 'J\'en roule un comme Jean Moulin' },
+        { name: 'MacroDu69', contenu: 'Rabais à Perrache frère' },
+        { name: 'BicraveurABob', contenu: 'Qui a du caprisun dans le coin ? Je file un bleu' }
       ]
     }
   }
