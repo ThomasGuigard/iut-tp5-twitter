@@ -45,7 +45,7 @@ export default {
       return moment(date).format('DD MMM YYYY')
     },
     retweet: function () {
-      this.$http.get('http://localhost:8080/retweet', {params: {utilisateur: 'johndoe', tweet: this.tweet.id}, responseType: 'text'}).then(
+      this.$http.get('http://localhost:8080/retweet', {params: {utilisateur: 'snoopdog', tweet: this.tweet.id}, responseType: 'text'}).then(
       response => {
         this.$emit('retweeted', this.tweet.id)
       },
