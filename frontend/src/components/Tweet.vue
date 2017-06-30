@@ -1,6 +1,7 @@
 <template>
   <div class="tweet">
-    {{ tweet.name }} {{ tweet.contenu}} {{ tweet.date }}
+    {{ tweet.auteur.prenom }} {{ tweet.auteur.nom }} @{{ tweet.auteur.handle }} - {{ tweet.date }}
+    {{ tweet.contenu }}
   </div>
 </template>
 
