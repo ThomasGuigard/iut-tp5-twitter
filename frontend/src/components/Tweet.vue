@@ -39,13 +39,13 @@ import Icon from 'vue-awesome/components/Icon'
 export default {
   name: 'tweet',
   components: {Icon},
-  props: ['tweet'],
+  props: ['tweet', 'currentUser'],
   methods: {
     moment: function (date) {
       return moment(date).format('DD MMM YYYY')
     },
     retweet: function () {
-      this.$http.get('http://localhost:8080/retweet', {params: {utilisateur: 'snoopdog', tweet: this.tweet.id}, responseType: 'text'}).then(
+      this.$http.get('http://localhost:8080/retweet', {params: {utilisateur: this.currentUser, tweet: this.tweet.id}, responseType: 'text'}).then(
       response => {
         this.$emit('retweeted', this.tweet.id)
       },

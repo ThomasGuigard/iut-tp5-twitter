@@ -1,7 +1,7 @@
 <template>
   <div class="timeline">
-    <utilisateurs :utilisateurs="utilisateurs"/>
-    <feed :tweets="tweets" :loading="loading" @retweeted="retweet"/>
+    <utilisateurs :utilisateurs="utilisateurs" @userSelected="changeUser"/>
+    <feed :tweets="tweets" :loading="loading" @retweeted="retweet" :currentUser="currentUser"/>
   </div>
 </template>
 
@@ -25,7 +25,7 @@ export default {
     },
     retweet: function (id) {
       var tweet = this.tweets.find(tweet => tweet.id === id)
-      tweet.retweeters.push({handle: 'snoopdog'})
+      tweet.retweeters.push({handle: this.selectedUser})
     },
     fetchUtilisateurs: function () {
       this.$http.get('http://localhost:8080/utilisateurs').then(response => {
@@ -34,13 +34,17 @@ export default {
       response => {
         console.log('erreur de récupération des utilisateurs')
       })
+    },
+    changeUser: function (handle) {
+      this.currentUser = handle
     }
   },
   data () {
     return {
       tweets: [],
       utilisateurs: [],
-      loading: true
+      loading: true,
+      currentUser: null
     }
   },
   created () {
