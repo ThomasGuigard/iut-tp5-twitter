@@ -1,8 +1,8 @@
 <template>
   <div class="tweet">
     <div>
-      <span class="handle">{{ tweet.auteur.prenom }} {{ tweet.auteur.nom }}</span> @{{ tweet.auteur.handle }}
-        - {{ tweet.date }}
+      <strong>{{ tweet.auteur.prenom }} {{ tweet.auteur.nom }}</strong>
+      <span class="handle">@{{ tweet.auteur.handle }} - {{ moment(tweet.date) }}</span>
     </div>
 
      <div>
@@ -31,11 +31,20 @@
 
 <script>
 import 'vue-awesome/icons'
+import moment from 'moment'
 import Icon from 'vue-awesome/components/Icon'
 export default {
   name: 'tweet',
   components: {Icon},
-  props: ['tweet']
+  props: ['tweet'],
+  methods: {
+    moment: function (date) {
+      return moment(date).format('DD MMM YYYY')
+    }
+  },
+  created () {
+    moment.locale('fr')
+  }
 }
 </script>
 
