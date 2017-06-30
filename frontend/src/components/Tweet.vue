@@ -1,32 +1,37 @@
 <template>
   <div class="tweet">
-    <div>
-      <strong>{{ tweet.auteur.prenom }} {{ tweet.auteur.nom }}</strong>
-      <span class="handle">@{{ tweet.auteur.handle }} - {{ moment(tweet.date) }}</span>
+    <div class="column">
+      <img :src="avatar"/>
     </div>
-
+   <div class="column">
      <div>
-       {{ tweet.contenu }}
+       <strong>{{ tweet.auteur.prenom }} {{ tweet.auteur.nom }}</strong>
+       <span class="handle">@{{ tweet.auteur.handle }} - {{ moment(tweet.date) }}</span>
      </div>
 
-     <div>
-        <ul>
-          <li class="button">
-            <icon name="reply"/>
-          </li>
-          <li class="button">
-            <a @click="retweet()">
-              <icon name="retweet"/> {{ tweet.retweeters.length }}
-            </a>
-          </li>
-          <li class="button">
-            <icon name="heart"/>
-          </li>
-          <li class="button">
-            <icon name="envelope"/>
-          </li>
-        </ul>
+      <div>
+        {{ tweet.contenu }}
       </div>
+
+      <div>
+         <ul>
+           <li class="button">
+             <icon name="reply"/>
+           </li>
+           <li class="button">
+             <a @click="retweet()">
+               <icon name="retweet"/> {{ tweet.retweeters.length }}
+             </a>
+           </li>
+           <li class="button">
+             <icon name="heart"/>
+           </li>
+           <li class="button">
+             <icon name="envelope"/>
+           </li>
+         </ul>
+       </div>
+   </div>
 
   </div>
 </template>
@@ -40,6 +45,11 @@ export default {
   name: 'tweet',
   components: {Icon},
   props: ['tweet', 'currentUser'],
+  computed: {
+    avatar: function () {
+      return 'https://robohash.org/TEXT?' + this.tweet.auteur.handle + '?size=100x100'
+    }
+  },
   methods: {
     moment: function (date) {
       return moment(date).format('DD MMM YYYY')
@@ -61,6 +71,10 @@ export default {
 </script>
 
 <style scoped>
+div.column {
+  display: inline-block;
+}
+
 li.button {
  display: inline-block;
 }

@@ -1,19 +1,21 @@
 <template>
   <div class="timeline">
     <utilisateurs :utilisateurs="utilisateurs" @userSelected="changeUser"/>
+    <postTweet :currentUser="currentUser" @tweeted="tweeted" />
     <feed :tweets="tweets" :loading="loading" @retweeted="retweet" :currentUser="currentUser"/>
   </div>
 </template>
 
 <script>
 import Utilisateurs from './Utilisateurs'
+import PostTweet from './PostTweet'
 import Vue from 'vue'
 import Resource from 'vue-resource'
 Vue.use(Resource)
 import Feed from './Feed.vue'
 export default {
   name: 'timeline',
-  components: {Feed, Utilisateurs},
+  components: {Feed, Utilisateurs, PostTweet},
   methods: {
     fetchTweets: function () {
       this.$http.get('http://localhost:8080/list').then(response => {
@@ -34,6 +36,9 @@ export default {
       response => {
         console.log('erreur de récupération des utilisateurs')
       })
+    },
+    tweeted: function (tweet) {
+      this.tweets.push(tweet)
     },
     changeUser: function (handle) {
       this.currentUser = handle
