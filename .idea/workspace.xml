@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66273b8b-cafd-42dc-8098-5ea7ad93ae21" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/edu/lyon1/twitter/Tweet.java" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/lyon1/twitter/Tweet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/edu/lyon1/twitter/TweetController.java" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/lyon1/twitter/TweetController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/package-lock.json" afterPath="$PROJECT_DIR$/frontend/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/package.json" afterPath="$PROJECT_DIR$/frontend/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/Feed.vue" afterPath="$PROJECT_DIR$/frontend/src/components/Feed.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/Tweet.vue" afterPath="$PROJECT_DIR$/frontend/src/components/Tweet.vue" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,8 +51,8 @@
       <file leaf-file-name="Feed.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/Feed.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+            <state relative-caret-position="680">
+              <caret line="40" column="1" lean-forward="false" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -69,8 +71,8 @@
       <file leaf-file-name="Tweet.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/Tweet.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="544">
+              <caret line="32" column="26" lean-forward="true" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -92,8 +94,8 @@
         <option value="$PROJECT_DIR$/frontend/src/components/Hello.vue" />
         <option value="$PROJECT_DIR$/frontend/src/router/index.js" />
         <option value="$PROJECT_DIR$/frontend/src/App.vue" />
-        <option value="$PROJECT_DIR$/frontend/src/components/Feed.vue" />
         <option value="$PROJECT_DIR$/frontend/src/components/Timeline.vue" />
+        <option value="$PROJECT_DIR$/frontend/src/components/Feed.vue" />
         <option value="$PROJECT_DIR$/frontend/src/components/Tweet.vue" />
       </list>
     </option>
@@ -666,16 +668,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/components/Feed.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        <state relative-caret-position="680">
+          <caret line="40" column="1" lean-forward="false" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/components/Tweet.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="544">
+          <caret line="32" column="26" lean-forward="true" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
           <folding />
         </state>
       </provider>
